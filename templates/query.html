@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <title>DataBase Query</title>
+  </head>
+  <body>
+    <a href="{{url_for('index')}}"> Back to Home Page</a>
+    <h1>Query</h1>
+
+    <p>Use SQL Query syntax to enter the query string that follow's the "WHERE"</p>
+    <p>Available Column names are "ref_tag", "journal", "volume" (integer), "pages", "year" (integer), "title", "authors", and "collection".</p>
+    <p>To use wildcares, use "LIKE" and employ the "%" (percent symbol) as a multiple character wildcard and "_" (underscore) as a single character wildcard.</p>
+    <p>Make sure to explicitly put strings in quotes!</p>
+
+    <form method="POST" action="" enctype="multipart/form-data">
+           <label for="fname">Make a Query:</label><br>
+           <input type="text" id="fname" name="fname"><br>
+           <input type="submit" id="sub_button" name="sub_button" value="Submit">
+    </form>
+    <hr> 
+
+    <h3>Results</h3>
+
+    <ul>
+      
+    {% for result in results %}
+
+    {% autoescape false %}
+        <li>{{result}}</li> <br>
+    {% endautoescape %}
+
+    {% endfor %}
+
+    </ul>
+
+    
+    
+
+
+
+  </body>
+</html>

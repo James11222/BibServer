@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+   <html>
+   <head></head>
+   <body>
+      
+      <h3>
+         <a href = "{{ url_for('index') }}"> Back to Home Page </a>
+      </h3>
+      
+      <hr/>
+      {%- for message in get_flashed_messages() %}
+         {{ message }}
+      {%- endfor %}
+		
+      <h3>Collections</h3>
+      
+      <table>
+         <thead>
+            <tr>
+               <th>Collection Name</th>
+               <th>Title</th>
+               <th>Year</th>
+               <th>Volume</th>
+               <th>Journal</th>
+               <th>Pages</th>
+               <th>Author</th>
+               <th>Reference Tag</th>
+            </tr>
+         </thead>
+         
+         <tbody>
+            {% for collection in collections %}
+               <tr>
+                  <td>{{ collection.collection_name }}</td>
+                  <td>{{ collection.title }}</td>
+                  <td>{{ collection.year }}</td>
+                  <td>{{ collection.volume}}</td>
+                  <td>{{ collection.journal }}</td>
+                  <td>{{ collection.pages }}</td>
+                  <td>{{ collection.authors}}</td>
+                  <td>{{ collection.ref_tag }}</td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+
+      <hr>
+      
+   </body>
+</html>
