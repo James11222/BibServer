@@ -1,4 +1,4 @@
-from BibServer.app import generate_collection, add_extension, Collections
+from BibServer.app import generate_collection, add_extension, query, index, upload_files
 from flask_sqlalchemy import SQLAlchemy
 from BibServer.app import create_app
 import pytest
@@ -44,6 +44,29 @@ def test_fail_make_collection():
 
 	except:
 		assert True
+
+def test_fail_query_func():
+	try:
+		query()
+		assert False
+	except:
+		assert True
+
+
+def test_fail_upload_files():
+	try:
+		upload_files()
+		assert False
+	except:
+		assert True
+
+def test_fail_index():
+	try:
+		index()
+		assert False
+	except:
+		assert True
+
 
 	
 
