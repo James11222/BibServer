@@ -29,10 +29,12 @@ def client(app):
 def runner(app):
     return app.test_cli_runner()
 
-
-def test_show_example(client):
-    response = client.get("/query")
-    assert b"Available Column names are" in response.data
+def test_show_example(client): #this is a failing test
+	try:
+		response = client.get("/query")
+		assert not b"Available Column names are" in response.data
+	except:
+		assert False
 
 	
 
