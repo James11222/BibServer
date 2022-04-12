@@ -1,4 +1,4 @@
-from BibServer.app import generate_collection, add_extension, query, index, upload_files
+from BibServer.app import generate_collection, add_extension, query, index, upload_files, generate_results
 from flask_sqlalchemy import SQLAlchemy
 from BibServer.app import create_app
 import pytest
@@ -63,6 +63,14 @@ def test_fail_upload_files():
 def test_fail_index():
 	try:
 		index()
+		assert False
+	except:
+		assert True
+
+def test_generate_results():
+	query_string = "year > 1900"
+	try:
+		results = generate_results(query_string, con=db.engine)
 		assert False
 	except:
 		assert True
