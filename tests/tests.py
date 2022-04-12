@@ -14,7 +14,6 @@ def app():
 	db.init_app(app1)
 	# other setup can go here (What does this even mean?)
 	yield app1
-
 	# clean up / reset resources here (What does this even mean?)
 
 @pytest.fixture()
@@ -37,8 +36,9 @@ def test_make_collection():
 	except:
 		assert False
 
-#All these tests are expected to fail due to the confusing flask testing api...
+#All below tests are expected to fail due to the confusing flask testing api problems...
 #we are just shooting for coverage here
+
 def test_query_fail_example(client): 
 	try:
 		response = client.get("/query")
