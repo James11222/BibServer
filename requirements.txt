@@ -1,0 +1,5 @@
+pytest
+Flask
+pandas
+pybtex
+Flask-SQLAlchemy

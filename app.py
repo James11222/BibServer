@@ -1,5 +1,4 @@
 import os
-from venv import create
 from flask import Flask, render_template, flash, request, redirect, url_for, abort, \
     send_from_directory
 from werkzeug.utils import secure_filename
