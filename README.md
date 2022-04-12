@@ -16,5 +16,5 @@ To close out just `CTRL + C` in your terminal, and to re-open the server you can
 A choppy gif below is provided for a usage example:
 
 <p align="center">
-  <img src="Images/walkthrough.gif" width="80%">
+  <img src="Images/new_walkthrough.gif" width="80%">
 </p>
