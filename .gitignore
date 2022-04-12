@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#sqlite database should remain local
+sqlite:///collections.sqlite3
+
+#uploaded bib files should stay on the local users computer
+uploads/*.bib
